@@ -32,10 +32,10 @@ public class TestGridFsTemplate {
     GridFSBucket gridFSBucket;
 
     @Test
-    //粗出文件
+    //存出文件
     public void testGridFs() throws FileNotFoundException {
         //要存储的文件
-        File file = new File("E:/index_banner.html");
+        File file = new File("E:/index_banner.ftl");
         //定义输入流
         FileInputStream fileInputStream = new FileInputStream(file);
         //向GridFS存储文件
@@ -48,7 +48,7 @@ public class TestGridFsTemplate {
     @Test
     public void queryFile() throws IOException {
         //根据文件id查询文件
-        GridFSFile gridFSFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is("5e085ce9caa9cc6d04afc54c")));
+        GridFSFile gridFSFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is("5e0854bbcaa9cc5604105182")));
         //打开一个下载流对象
         GridFSDownloadStream gridFSDownloadStream = gridFSBucket.openDownloadStream(gridFSFile.getObjectId());
         //创建GridFsResource对象，获取流
@@ -62,6 +62,6 @@ public class TestGridFsTemplate {
     @Test
     public void testDelFile() throws IOException {
         //根据文件id删除fs.files和fs.chunks中的记录
-        gridFsTemplate.delete(Query.query(Criteria.where("_id").is("5e085ce9caa9cc6d04afc54c")));
+        gridFsTemplate.delete(Query.query(Criteria.where("_id").is("5e085b7ccaa9cc2a98113089")));
     }
 }

@@ -182,19 +182,19 @@ public class PageService {
     //页面静态化
     public String getPageHtml(String  pageId){
         //获取页面模型数据
-        Map map = getModelByPageId(pageId);
+        Map map = this.getModelByPageId(pageId);
         if(map == null){
             //获取页面模型数据为空
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_DATAISNULL);
         }
         //获取页面模板
-        String templateContent  = getTemplateByPageId(pageId);
+        String templateContent  = this.getTemplateByPageId(pageId);
         if(StringUtils.isEmpty(templateContent)){
             //页面模板为空
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_TEMPLATEISNULL);
         }
         //执行静态化
-        String html = generateHtml(templateContent, map);
+        String html = this.generateHtml(templateContent, map);
         if(StringUtils.isEmpty(html)){
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_HTMLISNULL);
         }
