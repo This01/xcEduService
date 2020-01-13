@@ -48,6 +48,7 @@ public class CmsPageController implements CmsPageControllerApi {
         return pageService.add(cmsPage);
     }
 
+    //根据ID查找页面
     @Override
     @GetMapping("/get/{id}")
     public CmsPage findById(@PathVariable("id") String id) {
@@ -55,6 +56,7 @@ public class CmsPageController implements CmsPageControllerApi {
         return pageService.getById(id);
     }
 
+    //修改页面
     @Override
     @PutMapping("/edit/{id}")
     public CmsPageResult update(@PathVariable("id") String id,@RequestBody CmsPage cmsPage) {
@@ -62,9 +64,16 @@ public class CmsPageController implements CmsPageControllerApi {
         return pageService.update(id,cmsPage);
     }
 
+    //删除页面
     @Override
     @DeleteMapping("/del/{id}")
     public ResponseResult delete(@PathVariable("id") String id) {
         return pageService.delete(id);
+    }
+
+    //发布页面
+    @Override
+    public ResponseResult post(String pageId) {
+        return null;
     }
 }

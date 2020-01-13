@@ -16,7 +16,6 @@ public class CmsConfigController implements CmsConfigControllerApi {
     @Autowired
     CmsConfigService cmsConfigService;
 
-    //
     @GetMapping("/getmodel/{id}")
     @Override
     //根据id查询配置管理信息

@@ -82,7 +82,7 @@ public class Producer03_routing {
              * 3、props，消息的属性
              * 4、body，消息内容
              */
-           /* for(int i=0;i<5;i++){
+            /*for(int i=0;i<5;i++){
                 //发送消息的时候指定routingKey
                 String message = "send email inform message to user";
                 channel.basicPublish(EXCHANGE_ROUTING_INFORM,ROUTINGKEY_EMAIL,null,message.getBytes());

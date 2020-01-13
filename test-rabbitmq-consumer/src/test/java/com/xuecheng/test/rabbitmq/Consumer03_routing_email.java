@@ -60,7 +60,7 @@ public class Consumer03_routing_email {
          * 2、exchange 交换机名称
          * 3、routingKey 路由key，作用是交换机根据路由key的值将消息转发到指定的队列中，在发布订阅模式中调协为空字符串
          */
-        channel.queueBind(QUEUE_INFORM_EMAIL, EXCHANGE_ROUTING_INFORM,ROUTINGKEY_EMAIL);
+        channel.queueBind(QUEUE_INFORM_EMAIL, EXCHANGE_ROUTING_INFORM,"inform");
 
         //实现消费方法
         DefaultConsumer defaultConsumer = new DefaultConsumer(channel){
